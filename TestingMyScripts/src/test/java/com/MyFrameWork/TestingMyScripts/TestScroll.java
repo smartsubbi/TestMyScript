@@ -156,7 +156,9 @@ public class TestScroll
 				"true");
 		driver = new FirefoxDriver(profile);	    		
 		driver.get("http://qa.schoolofdragons.com/");	
-		driver.findElement(By.xpath("//div[@id='ctl00_logindiv']/a[.='Log in']"));		
+		driver.findElement(By.xpath("//div[@id='ctl00_logindiv']/a[.='Log in']"));	
+		
+		System.setProperty("USERNAME_CREATED", "subbuPlayer");
 		driver.close();
 		driver.quit();
 	}

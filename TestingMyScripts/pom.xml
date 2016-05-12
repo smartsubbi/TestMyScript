@@ -65,7 +65,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<systemPropertyVariables>
-						<emailid>${emailid}</emailid>
+						<emailid>${usernamec}</emailid>
 					</systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>SchoolOfDragons - Live - LiveMembershipPagesChecksTestCases - testNG.xml</suiteXmlFile>

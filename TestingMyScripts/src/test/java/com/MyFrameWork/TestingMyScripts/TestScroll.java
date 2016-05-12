@@ -222,12 +222,21 @@ public class TestScroll
 //	    } catch (Exception e1) {
 //	        e1.printStackTrace();
 //	    } 
-	System.setProperty( "usernamec", "SubbuPlayer" );
-	 
-	Field fieldSysPath = ClassLoader.class.getDeclaredField( "sys_paths" );
-	fieldSysPath.setAccessible( true );
-	fieldSysPath.set( null, null );
-	System.out.println(System.getProperty("usernamec"));
+//	System.setProperty( "usernamec", "SubbuPlayer" );
+//	 
+//	Field fieldSysPath = ClassLoader.class.getDeclaredField( "sys_paths" );
+//	fieldSysPath.setAccessible( true );
+//	fieldSysPath.set( null, null );
+//	System.out.println(System.getProperty("usernamec"));
+//	
+//	AbstractBuild currentBuild = (AbstractBuild) Thread.currentThread().executable;
+//
+//	ParametersAction newParamAction = new hudson.model.ParametersAction(new hudson.model.StringParameterValue(“TEST_TEMP_VAR”,”value28″));
+//
+//	currentBuild.addAction(newParamAction);
+	String emailIdToSend = System.getProperty("usernamec");
+	
+	System.out.println(emailIdToSend);
 	
 	}
 	

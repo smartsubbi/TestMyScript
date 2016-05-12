@@ -237,7 +237,8 @@ public class TestScroll
 	String emailIdToSend = System.getProperty("BUILD_NUMBER");
 	
 	System.out.println("Build number is : "+emailIdToSend);
-	
+	   String workingDir = System.getProperty("user.dir");
+	   System.out.println("Current working directory : " + workingDir);
 	}
 	
 	

@@ -234,7 +234,7 @@ public class TestScroll
 //	ParametersAction newParamAction = new hudson.model.ParametersAction(new hudson.model.StringParameterValue(“TEST_TEMP_VAR”,”value28″));
 //
 //	currentBuild.addAction(newParamAction);
-	String emailIdToSend = System.getProperty("usernamec");
+	String emailIdToSend = System.getProperty("BUILD_NUMBER");
 	
 	System.out.println(emailIdToSend);
 	

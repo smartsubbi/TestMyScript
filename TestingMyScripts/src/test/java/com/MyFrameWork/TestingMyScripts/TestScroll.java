@@ -236,7 +236,7 @@ public class TestScroll
 //	currentBuild.addAction(newParamAction);
 	String emailIdToSend = System.getProperty("BUILD_NUMBER");
 	
-	System.out.println(emailIdToSend);
+	System.out.println("Build number is : "+emailIdToSend);
 	
 	}
 	

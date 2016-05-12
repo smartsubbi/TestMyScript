@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Live Test Cases Suite]">
+  <parameter name="Category" value="Live Test Cases"/>
+  <test name="Live Tests">
+    <classes>
+      <class name="com.MyFrameWork.TestingMyScripts.TestScroll"/>
+    </classes>
+  </test> <!-- Live Tests -->
+  <test name="Live Tests(failed)">
+    <classes>
+      <class name="com.MyFrameWork.TestingMyScripts.TestScroll">
+        <methods>
+          <include name="autoriseMail"/>
+        </methods>
+      </class> <!-- com.MyFrameWork.TestingMyScripts.TestScroll -->
+    </classes>
+  </test> <!-- Live Tests(failed) -->
+</suite> <!-- Failed suite [Live Test Cases Suite] -->

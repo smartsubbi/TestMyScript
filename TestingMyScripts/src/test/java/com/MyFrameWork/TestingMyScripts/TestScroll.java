@@ -148,11 +148,14 @@ public class TestScroll
 	@Test
 	public void autoriseMail() throws Throwable
 	{	
-		WebDriver driver;		
+		WebDriver driver;			
 		FirefoxProfile profile = new FirefoxProfile();
-		profile.setPreference(FirefoxProfile.PORT_PREFERENCE, 4999);
-	    driver = new FirefoxDriver(profile);		
-		driver.get("http://www.schoolofdragons.com/");	
+		profile.setPreference("network.automatic-ntlm-auth.trusted-uris",
+		"schoolofdragons.com");
+		profile.setPreference("network.automatic-ntlm-auth.allow-non-fqdn",
+				"true");
+		driver = new FirefoxDriver(profile);	    		
+		driver.get("http://qa.schoolofdragons.com/");	
 		driver.findElement(By.xpath("//div[@id='ctl00_logindiv']/a[.='Log in']"));		
 		driver.close();
 		driver.quit();

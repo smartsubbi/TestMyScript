@@ -2,10 +2,15 @@ package com.MyFrameWork.TestingMyScripts;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -145,23 +150,100 @@ public class TestScroll
 //		
 //	}
 	
-	@Test
+@Test
 	public void autoriseMail() throws Throwable
 	{	
-		WebDriver driver;			
-		FirefoxProfile profile = new FirefoxProfile();
-		profile.setPreference("network.automatic-ntlm-auth.trusted-uris",
-		"schoolofdragons.com");
-		profile.setPreference("network.automatic-ntlm-auth.allow-non-fqdn",
-				"true");
-		driver = new FirefoxDriver(profile);	    		
-		driver.get("http://qa.schoolofdragons.com/");	
-		driver.findElement(By.xpath("//div[@id='ctl00_logindiv']/a[.='Log in']"));	
+//		WebDriver driver;			
+//		FirefoxProfile profile = new FirefoxProfile();
+//		profile.setPreference("network.automatic-ntlm-auth.trusted-uris",
+//		"schoolofdragons.com");
+//		profile.setPreference("network.automatic-ntlm-auth.allow-non-fqdn",
+//				"true");
+//		driver = new FirefoxDriver(profile);	    		
+//		driver.get("http://qa.schoolofdragons.com/");	
+//		driver.findElement(By.xpath("//div[@id='ctl00_logindiv']/a[.='Log in']"));	
+//		
+//		System.setProperty("USERNAME_CREATED", "subbuPlayer");
+//		driver.close();
+//		driver.quit();
 		
-		System.setProperty("USERNAME_CREATED", "subbuPlayer");
-		driver.close();
-		driver.quit();
+//		ProcessBuilder pb = new ProcessBuilder("CMD", "/C", "SET");
+//	    Map<String, String> env = pb.environment();
+//	    env.put("MYVAR", "myValue");
+//	    Process p = pb.start();
+//	    InputStreamReader isr = new InputStreamReader(p.getInputStream());
+//	    char[] buf = new char[1024];
+//	    while (!isr.ready()) {
+//	        ;
+//	    }
+//	    while (isr.read(buf) != -1) {
+//	        System.out.println(buf);
+//	    }
+
+//		ProcessBuilder pb = new ProcessBuilder("/bin/sh"); // or any other program you want to run
+//
+//	    Map<String, String> envMap = pb.environment();
+//
+//	    envMap.put("MY_ENV_VAR", "1");
+//	    Set<String> keys = envMap.keySet();
+//	    for(String key:keys){
+//	        System.out.println(key+" ==> "+envMap.get(key));
+//	    }
+//	 try
+//	    {
+//	        Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
+//	        Field theEnvironmentField = processEnvironmentClass.getDeclaredField("theEnvironment");
+//	        theEnvironmentField.setAccessible(true);
+//	        Map<String, String> env = (Map<String, String>) theEnvironmentField.get(null);
+//	        env.put("UsernameC","SubbuPlayer");
+//	        Field theCaseInsensitiveEnvironmentField = processEnvironmentClass.getDeclaredField("theCaseInsensitiveEnvironment");
+//	        theCaseInsensitiveEnvironmentField.setAccessible(true);
+//	        Map<String, String> cienv = (Map<String, String>)     theCaseInsensitiveEnvironmentField.get(null);
+//	        cienv.put("UsernameC","SubbuPlayer");
+//	    }
+//	    catch (NoSuchFieldException e)
+//	    {
+//	      try {
+//	        Class[] classes = Collections.class.getDeclaredClasses();
+//	        Map<String, String> env = System.getenv();
+//	        for(Class cl : classes) {
+//	            if("java.util.Collections$UnmodifiableMap".equals(cl.getName())) {
+//	                Field field = cl.getDeclaredField("m");
+//	                field.setAccessible(true);
+//	                Object obj = field.get(env);
+//	                Map<String, String> map = (Map<String, String>) obj;
+//	                map.clear();
+//	                map.put("UsernameC","SubbuPlayer");;
+//	            }
+//	        }
+//	      } catch (Exception e2) {
+//	        e2.printStackTrace();
+//	      }
+//	    } catch (Exception e1) {
+//	        e1.printStackTrace();
+//	    } 
+	System.setProperty( "usernamec", "SubbuPlayer" );
+	 
+	Field fieldSysPath = ClassLoader.class.getDeclaredField( "sys_paths" );
+	fieldSysPath.setAccessible( true );
+	fieldSysPath.set( null, null );
+	System.out.println(System.getProperty("usernamec"));
+	
 	}
+	
+	
+//	public static void main(String[] args) throws IOException {
+//
+//		ProcessBuilder pb = new ProcessBuilder("/bin/sh"); // or any other program you want to run
+//
+//	    Map<String, String> envMap = pb.environment();
+//
+//	    envMap.put("MY_ENV_VAR", "1");
+//	    Set<String> keys = envMap.keySet();
+//	    for(String key:keys){
+//	        System.out.println(key+" ==> "+envMap.get(key));
+//	    }
+//	}
 
 	 public static void scrollToBottom(WebDriver driver) throws Throwable 
 	 {				 

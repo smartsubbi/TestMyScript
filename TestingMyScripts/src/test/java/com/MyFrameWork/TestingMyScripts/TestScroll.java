@@ -1,6 +1,7 @@
 package com.MyFrameWork.TestingMyScripts;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
@@ -234,14 +235,27 @@ public class TestScroll
 //	ParametersAction newParamAction = new hudson.model.ParametersAction(new hudson.model.StringParameterValue(“TEST_TEMP_VAR”,”value28″));
 //
 //	currentBuild.addAction(newParamAction);
-	String emailIdToSend = System.getProperty("BUILD_NUMBER");
+	try 
+	{
+        FileWriter writer = new FileWriter("mailContent.html", false);
+        writer.write("\r\n");   // write new line
+        writer.write("<!DOCTYPE html>");  
+        writer.write("<html>"); 
+        writer.write("<p>Pages (HTML)</p>"); 
+        writer.write("<p>Style Sheets (CSS)</p>"); 
+        writer.write("<p>Computer Code (JavaScript)</p>"); 
+        writer.write("<p>Live Data (Files and Databases)</p>"); 
+        writer.write("<html>");         
+        writer.close();
+    } 
+	catch (IOException e) 
+	{
+        e.printStackTrace();
+    }	
 	
-	System.out.println("Build number is : "+emailIdToSend);
-	   String workingDir = System.getProperty("user.dir");
-	   System.out.println("Current working directory : " + workingDir);
+
+	
 	}
-	
-	
 //	public static void main(String[] args) throws IOException {
 //
 //		ProcessBuilder pb = new ProcessBuilder("/bin/sh"); // or any other program you want to run
@@ -255,13 +269,13 @@ public class TestScroll
 //	    }
 //	}
 
-	 public static void scrollToBottom(WebDriver driver) throws Throwable 
-	 {				 
-		 Actions action = new Actions(driver);  
-	     action.sendKeys(Keys.PAGE_DOWN);  
-	     Thread.sleep(5000);  
-	     action.click(driver.findElement(By.xpath("//html[@id='ng-app']/body/section/div/div[1]/img[@class='brand-img img-responsive']"))).perform();  	       
-	 } 
+//	 public static void scrollToBottom(WebDriver driver) throws Throwable 
+//	 {				 
+//		 Actions action = new Actions(driver);  
+//	     action.sendKeys(Keys.PAGE_DOWN);  
+//	     Thread.sleep(5000);  
+//	     action.click(driver.findElement(By.xpath("//html[@id='ng-app']/body/section/div/div[1]/img[@class='brand-img img-responsive']"))).perform();  	       
+//	 } 
 	
 	
 

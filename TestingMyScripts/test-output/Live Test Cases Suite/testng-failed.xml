@@ -7,13 +7,4 @@
       <class name="com.MyFrameWork.TestingMyScripts.TestScroll"/>
     </classes>
   </test> <!-- Live Tests -->
-  <test name="Live Tests(failed)">
-    <classes>
-      <class name="com.MyFrameWork.TestingMyScripts.TestScroll">
-        <methods>
-          <include name="autoriseMail"/>
-        </methods>
-      </class> <!-- com.MyFrameWork.TestingMyScripts.TestScroll -->
-    </classes>
-  </test> <!-- Live Tests(failed) -->
 </suite> <!-- Failed suite [Live Test Cases Suite] -->
